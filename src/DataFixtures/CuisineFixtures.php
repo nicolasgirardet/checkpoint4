@@ -17,6 +17,7 @@ class CuisineFixtures extends Fixture
         'coréenne',
         'thaïlandaise',
         'indonésienne',
+        'taïwanaise',
     ];
 
     public function load(ObjectManager $manager): void
