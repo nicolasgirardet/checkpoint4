@@ -24,18 +24,18 @@
 								personnes</p>
 							<p class="card-text"><b>Prép. :</b>
 								{{ recipe.prepTime }}
-								min.</p>
+								minutes</p>
 							<p class="card-text"><b>Cuisson :</b>
-								{{ recipe.cookingTime }}
-								min.</p>
+								{{ recipe.cookingTime }} minutes
+								</p>
                                 <p class="card-text"><b>Ingrédients :</b>
 								{{ recipe.ingredient }}
-								min.</p>
+								</p>
                                 <p class="card-text"><b>Étapes :</b>
 								{{ recipe.step }}
-								min.</p>
+								</p>
 							
-							<a href="#" class="position-absolute bottom-0 start-50 translate-middle-x btn btn-primary">Voir la recette</a>
+							<a href="{{ path('recipe_index') }}" class="position-absolute bottom-0 start-50 translate-middle-x btn btn-primary">Retour</a>
 							
 						</div>
 						<div class="d-flex flex-column flex-sm-row align-items-baseline mt-1 p-0 justify-content-between"></div>

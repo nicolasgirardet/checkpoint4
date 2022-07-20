@@ -1,7 +1,5 @@
 <?php
 
-// src/Controller/RecipeController.php
-
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -9,6 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\RecipeRepository;
 use App\Entity\Recipe;
+use App\Repository\CuisineRepository;
 
 #[Route('/', name: 'recipe_')]
 class RecipeController extends AbstractController
@@ -27,8 +26,6 @@ class RecipeController extends AbstractController
     #[Route('/{id}', name: 'show')]
     public function show(Recipe $recipe): Response
     {
-        //$season = $seasonRepository->findAll();
-
         return $this->render('recipe/show.html.twig', [
             'recipe' => $recipe
         ]);

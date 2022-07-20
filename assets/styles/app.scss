@@ -1,7 +1,11 @@
+// redefining Bootstrap's colours
+$primary: #3916DB;
+
 @import "~bootstrap/scss/bootstrap";
 
 body {
     background-color: #DBC100;
+    margin-top: 111px;
 }
 
 // GENERAL
@@ -14,6 +18,15 @@ body {
     height: 95px;
 }
 
+.nav-container {
+    min-height: 111px;
+    border-bottom: black solid 2px;
+}
+  
+.navbar-button {
+    margin-left: 10px;
+}
+
 // CARDS SHOWING RECIPES WITHOUT DETAILS
 
 .dish-card-image {
@@ -22,9 +35,11 @@ body {
 }
 
 .undetailed-dish-card {
-    width: 260px;
-    height: 540px;
+    width: 280px;
+    height: 520px;
 }
+
+// CARDS SHOWING RECIPES WITH DETAILS
 
 .detailed-dish-card {
     width: 100%;

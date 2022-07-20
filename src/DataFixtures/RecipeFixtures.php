@@ -18,7 +18,7 @@ class RecipeFixtures extends Fixture implements DependentFixtureInterface
         $recipe = new Recipe();
 
         $recipe->setName($faker->randomElement([
-            'Nouilles au boeuf (牛肉面)',
+            'Nouilles taïwanaises au boeuf',
             'Nems au porc',
             'Chirashi',
             'Bo bun',

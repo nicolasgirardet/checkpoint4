@@ -1,21 +1,26 @@
 {# _navbar.html.twig #}
 
-  <nav class="navbar navbar-expand-md navbar-light bg-light">
+  <nav class="nav-container fixed-top navbar navbar-expand-md navbar-light bg-light">
   <!-- Navbar content -->
-  <div class="container-fluid">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+   <button class="navbar-button position-absolute top-50 start-5 translate-middle-y navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+  <div class="container-fluid d-flex justify-content-center">
+  <img class="d-block d-md-none d  logo-picture"
+     src="{{ asset('build/images/logo_asian_taste.png') }}"
+     alt="logo">
+   
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
       <ul class="w-100 d-flex justify-content-around navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Nos recettes</a>
+      
+        <li class="align-self-center nav-item">
+          <a class="nav-link active" aria-current="page" href="{{ path('recipe_index') }}">Nos recettes</a>
         </li>
-        <img class="logo-picture"
+        <img class="d-none d-md-block d logo-picture"
      src="{{ asset('build/images/logo_asian_taste.png') }}"
      alt="logo">
         <!--<a class="navbar-brand" href="#">ASIAN TASTE</a>-->
-        <li class="nav-item">
+        <li class="align-self-center nav-item">
           <a class="nav-link active" href="#" tabindex="-1" aria-disabled="true">Connexion</a>
         </li>
       </ul>
