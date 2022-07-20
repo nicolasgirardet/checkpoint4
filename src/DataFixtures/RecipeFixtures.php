@@ -22,9 +22,10 @@ class RecipeFixtures extends Fixture implements DependentFixtureInterface
             'Nems au porc',
             'Chirashi',
             'Bo bun',
-            'Poulet paneer',
+            'Poulet palak',
             'Jiaozi au poulet',
             'Pad thaï aux crevettes',
+            'Soupe phô'
         ]));
         $recipe->setNbPeople($faker->randomElement([
             2, 4, 6, 8, 10
@@ -46,20 +47,28 @@ class RecipeFixtures extends Fixture implements DependentFixtureInterface
         ]));
         $recipe->setStep($faker->paragraphs(6, true));
         $recipe->setPicture($faker->randomElement([
-            'beef-noodle-soup.jpg',
-            'butajiru.jpg',
+            'beef-noodle-soup',
+            'butajiru',
             'butter-chicken',
-            'cock-a-leekie.jpg',
-            'duck-soup-noodles.jpg',
-            'fish.jpg',
-            'hara-masala-murgh.jpg',
-            'kimchi.guk.jpg',
-            'miso-soup.jpg',
-            'pork-blood-soup.jpg',
-            'solyanka.jpg',
-            'soto.jpg',
+            'cock-a-leekie',
+            'duck-soup-noodles',
+            'fish',
+            'hara-masala-murgh',
+            'kimchi.guk',
+            'miso-soup',
+            'pork-blood-soup',
+            'solyanka',
+            'soto',
         ]));
-
+        $recipe->setCuisine($this->getReference('cuisine_' . $faker->randomElement([
+        'japonaise',
+        'chinoise',
+        'vietnamienne',
+        'indienne',
+        'coréenne',
+        'thaïlandaise',
+        'indonésienne',
+        ])));
         $manager->persist($recipe);
 
         }

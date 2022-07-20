@@ -26,6 +26,7 @@ class CuisineFixtures extends Fixture
             $cuisine = new Cuisine();
             $cuisine->setName($cuisineName);
             $manager->persist($cuisine);
+            $this->addReference('cuisine_' . $cuisineName, $cuisine);
         }
 
         $manager->flush();

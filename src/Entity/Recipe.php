@@ -35,6 +35,10 @@ class Recipe
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $picture = null;
 
+    #[ORM\ManyToOne(inversedBy: 'recipes')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Cuisine $cuisine = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -120,6 +124,18 @@ class Recipe
     public function setPicture(?string $picture): self
     {
         $this->picture = $picture;
+
+        return $this;
+    }
+
+    public function getCuisine(): ?Cuisine
+    {
+        return $this->cuisine;
+    }
+
+    public function setCuisine(?Cuisine $cuisine): self
+    {
+        $this->cuisine = $cuisine;
 
         return $this;
     }

@@ -16,6 +16,24 @@
 
 	<body>
 		<h1>Bienvenue sur {{ website }}</h1>
+
+		<h1>Nos recettes</h1>
+
+<div class="card" style="width: 18rem;">
+{% for recipe in recipes %}
+  <img src="{{ asset('build/images/dishes/' ~ recipe.picture ~ '.jpg') }}" class="card-img-top" alt="dish picture">
+  <div class="card-body">
+    <h5 class="card-title">{{ recipe.name }}</h5>
+    <p class="card-text">{{ recipe.nbPeople }} pers.</p>
+	<p class="card-text">Préparation : {{ recipe.prepTime }} min.</p>
+	<p class="card-text">Cuisson : {{ recipe.cookingTime }} min.</p>
+	<p class="card-text">Ingrédients : {{ recipe.ingredient }}</p>
+	<p class="card-text">Étapes : {{ recipe.step }}</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+  {% endfor %}
+</div>
+
 	</body>
 
 </html>
