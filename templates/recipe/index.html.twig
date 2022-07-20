@@ -14,14 +14,11 @@
 		<div class="container container-lg">
 			<div class="row justify-content-center">
 				{% for recipe in recipes %}
-					<div class="undetailed-dish-card card col-6 col-md-4 d-flex flex-column p-2 p-lg-4">
+					<div class="undetailed-dish-card card col-6 col-md-4 d-flex flex-column p-2 p-lg-4 m-1">
 
 						<img src="{{ asset('build/images/dishes/' ~ recipe.picture ~ '.jpg') }}" class="dish-card-image" alt="dish picture">
-
-						<div class="mt-2">
-							<h1 class="m-0">{{ recipe.name }}</h1>
-						</div>
 						<div class="m-0 p-0 d-flex flex-column justify-content-between">
+						<h1 class="m-0">{{ recipe.name }}</h1>
 							<p class="card-text">{{ recipe.nbPeople }}
 								personnes</p>
 							<p class="card-text">Prép. :
@@ -30,7 +27,9 @@
 							<p class="card-text">Cuisson :
 								{{ recipe.cookingTime }}
 								min.</p>
-							<a href="#" class="btn btn-primary">Voir la recette</a>
+							
+							<a href="#" class="position-absolute top-100 start-50 translate-middle btn btn-primary">Voir la recette</a>
+							
 						</div>
 						<div class="d-flex flex-column flex-sm-row align-items-baseline mt-1 p-0 justify-content-between"></div>
 					</div>
