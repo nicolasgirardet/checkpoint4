@@ -18,7 +18,7 @@ class RecipeController extends AbstractController
 
         return $this->render('recipe/index.html.twig', [
             'recipes' => $recipes,
-            'website' => 'Asian Taste',
+            //'website' => 'Asian Taste',
          ]);
     }
 }

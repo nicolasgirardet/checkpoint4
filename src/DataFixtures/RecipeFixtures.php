@@ -54,7 +54,7 @@ class RecipeFixtures extends Fixture implements DependentFixtureInterface
             'duck-soup-noodles',
             'fish',
             'hara-masala-murgh',
-            'kimchi.guk',
+            'kimchi-guk',
             'miso-soup',
             'pork-blood-soup',
             'solyanka',

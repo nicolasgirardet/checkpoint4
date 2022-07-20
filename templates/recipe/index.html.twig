@@ -5,37 +5,39 @@
 
 {% block body %}
 
-<!doctype html>
 
-<html lang="en">
+	<div class="container container-card">
+		<div class="row d-flex justify-content-start">
+			<h1 class="text-center">Nos recettes</h1>
+		</div>
 
-	<head>
-		<meta charset="UTF-8">
-		<title>Nos recettes</title>
-	</head>
+		<div class="container container-lg">
+			<div class="row justify-content-center">
+				{% for recipe in recipes %}
+					<div class="undetailed-dish-card card col-6 col-md-4 d-flex flex-column p-2 p-lg-4">
 
-	<body>
-		<h1>Bienvenue sur {{ website }}</h1>
+						<img src="{{ asset('build/images/dishes/' ~ recipe.picture ~ '.jpg') }}" class="dish-card-image" alt="dish picture">
 
-		<h1>Nos recettes</h1>
-
-<div class="card" style="width: 18rem;">
-{% for recipe in recipes %}
-  <img src="{{ asset('build/images/dishes/' ~ recipe.picture ~ '.jpg') }}" class="card-img-top" alt="dish picture">
-  <div class="card-body">
-    <h5 class="card-title">{{ recipe.name }}</h5>
-    <p class="card-text">{{ recipe.nbPeople }} pers.</p>
-	<p class="card-text">Préparation : {{ recipe.prepTime }} min.</p>
-	<p class="card-text">Cuisson : {{ recipe.cookingTime }} min.</p>
-	<p class="card-text">Ingrédients : {{ recipe.ingredient }}</p>
-	<p class="card-text">Étapes : {{ recipe.step }}</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-  {% endfor %}
+						<div class="mt-2">
+							<h1 class="m-0">{{ recipe.name }}</h1>
+						</div>
+						<div class="m-0 p-0 d-flex flex-column justify-content-between">
+							<p class="card-text">{{ recipe.nbPeople }}
+								personnes</p>
+							<p class="card-text">Prép. :
+								{{ recipe.prepTime }}
+								min.</p>
+							<p class="card-text">Cuisson :
+								{{ recipe.cookingTime }}
+								min.</p>
+							<a href="#" class="btn btn-primary">Voir la recette</a>
+						</div>
+						<div class="d-flex flex-column flex-sm-row align-items-baseline mt-1 p-0 justify-content-between"></div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
 </div>
-
-	</body>
-
-</html>
 
 {% endblock %}
