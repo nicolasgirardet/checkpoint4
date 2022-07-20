@@ -14,7 +14,7 @@ class RecipeController extends AbstractController
     public function index(): Response
     {
         return $this->render('recipe/index.html.twig', [
-            'website' => 'Wild Series',
+            'website' => 'Asian Taste',
          ]);
     }
 }

@@ -11,4 +11,5 @@ import './styles/app.scss';
 // start the Stimulus application
 import './bootstrap';
 
-//require('bootstrap');
+// this enables the Javascript to work for Bootstrap 5
+require('bootstrap');
