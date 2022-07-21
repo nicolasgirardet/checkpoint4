@@ -70,6 +70,7 @@ class RecipeFixtures extends Fixture implements DependentFixtureInterface
         'indonésienne',
         'taïwanaise',
         ])));
+        $recipe->setUser($this->getReference('user_' . $faker->randomElement('1', '2', '3')));
         $manager->persist($recipe);
 
         }
@@ -80,7 +81,8 @@ class RecipeFixtures extends Fixture implements DependentFixtureInterface
     {
         return
             [
-                CuisineFixtures::class
+                CuisineFixtures::class, 
+                UserFixtures::class
             ];
     }
 }

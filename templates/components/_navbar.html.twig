@@ -14,15 +14,20 @@
       <ul class="w-100 d-flex justify-content-around navbar-nav">
       
         <li class="align-self-center nav-item">
-          <a class="nav-link active" aria-current="page" href="{{ path('recipe_index') }}">Nos recettes</a>
+          <a class="nav-link active" aria-current="page" href="{{ path('app_recipe_index') }}">Nos recettes</a>
         </li>
         <img class="d-none d-md-block d logo-picture"
      src="{{ asset('build/images/logo_asian_taste.png') }}"
      alt="logo">
         <!--<a class="navbar-brand" href="#">ASIAN TASTE</a>-->
-        <li class="align-self-center nav-item">
-          <a class="nav-link active" href="#" tabindex="-1" aria-disabled="true">Connexion</a>
-        </li>
+ <li class="align-self-center nav-item">
+  {% if app.user %}
+    {{ app.user.email }}
+    <a class="nav-link active" tabindex="-1" aria-disabled="true" href="{{ path('app_logout') }}">Se déconnecter</a>
+{% else %}
+    <a class="nav-link active" tabindex="-1" aria-disabled="true" href="{{ path('app_login') }}">Se connecter</a>
+{% endif %}
+    </li>
       </ul>
     </div>
   </div>

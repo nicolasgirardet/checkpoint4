@@ -22,20 +22,20 @@
 								</p>
 							<p class="card-text">Pour {{ recipe.nbPeople }}
 								personnes</p>
-							<p class="card-text"><b>Prép. :</b>
+							<p class="card-text"><b>Préparation :</b>
 								{{ recipe.prepTime }}
 								minutes</p>
 							<p class="card-text"><b>Cuisson :</b>
 								{{ recipe.cookingTime }} minutes
 								</p>
                                 <p class="card-text"><b>Ingrédients :</b>
-								{{ recipe.ingredient }}
+								{{ recipe.ingredient }}.
 								</p>
                                 <p class="card-text"><b>Étapes :</b>
 								{{ recipe.step }}
 								</p>
 							
-							<a href="{{ path('recipe_index') }}" class="position-absolute bottom-0 start-50 translate-middle-x btn btn-primary">Retour</a>
+							<a href="{{ path('app_recipe_index') }}" class="position-absolute bottom-0 start-50 translate-middle-x btn btn-primary">Retour</a>
 							
 						</div>
 						<div class="d-flex flex-column flex-sm-row align-items-baseline mt-1 p-0 justify-content-between"></div>

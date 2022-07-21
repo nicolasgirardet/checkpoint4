@@ -39,6 +39,9 @@ class Recipe
     #[ORM\JoinColumn(nullable: false)]
     private ?Cuisine $cuisine = null;
 
+    #[ORM\ManyToOne(inversedBy: 'recipe')]
+    private ?User $user = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -136,6 +139,18 @@ class Recipe
     public function setCuisine(?Cuisine $cuisine): self
     {
         $this->cuisine = $cuisine;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
 
         return $this;
     }

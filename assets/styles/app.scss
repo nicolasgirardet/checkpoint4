@@ -5,7 +5,7 @@ $primary: #3916DB;
 
 body {
     background-color: #DBC100;
-    margin-top: 111px;
+    margin-top: 200px;
 }
 
 // GENERAL
@@ -14,17 +14,22 @@ body {
 // NAVBAR 
 
 .logo-picture {
-    width: 127.5px;
-    height: 95px;
+    width: 225px;
+    height: 160px;
 }
 
 .nav-container {
-    min-height: 111px;
+    min-height: 160px;
     border-bottom: black solid 2px;
 }
   
 .navbar-button {
     margin-left: 10px;
+}
+
+.nav-container a {
+    font-size: xx-large;
+    color: #DB290B; 
 }
 
 // CARDS SHOWING RECIPES WITHOUT DETAILS
@@ -37,10 +42,98 @@ body {
 .undetailed-dish-card {
     width: 280px;
     height: 520px;
+    margin-bottom: 15px;
+    border: #DB290B solid 1px;
 }
 
 // CARDS SHOWING RECIPES WITH DETAILS
 
 .detailed-dish-card {
     width: 100%;
+    border: #DB290B solid 1px;
+}
+
+// RECIPE FORM
+
+.recipe-form {
+    margin: 222px 25% 12.5% 25% ;
+    border: black solid 2px;
+    background-color: #16DB84;
+    padding: 3%;
+    border-radius: 15px;
+    min-width: 310px;
+}
+
+// LOGIN FORM
+
+.login-form {
+    margin: 222px 25% 12.5% 25% ;
+    border: black solid 2px;
+    background-color: #16DB84;
+    padding: 3%;
+    border-radius: 15px;
+    min-width: 310px;
+}
+
+.login-card {
+    height: 320px;
+    background-color: #16DB84;
+}
+
+.login-form input {
+    width: 100%;
+}
+
+.login-forms-inputs {
+    position: relative;
+}
+
+.forms-inputs span {
+    position: absolute;
+    top:-18px;
+    left: 10px;
+    background-color: #fff;
+    padding: 5px 10px;
+    font-size: 15px;
+}
+
+.forms-inputs input {
+    height: 50px;
+    border: 2px solid #eee;
+}
+
+.forms-inputs input:focus {
+    box-shadow: none;
+    outline: none;
+    border: 2px solid #000
+}
+
+.login-btn {
+    height: 50px;
+}
+
+.success-data {
+    display: flex;
+    flex-direction: column;
+}
+
+.bxs-badge-check {
+    font-size: 90px;
+}
+
+// REGISTRATION FORM
+
+.form-check-input {
+    max-width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.registration-form {
+    margin: 130px 25% 12.5% 25% ;
+    border: black solid 2px;
+    background-color: #16DB84;
+    padding: 3%;
+    border-radius: 15px;
+    min-width: 310px;
 }

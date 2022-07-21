@@ -5,8 +5,6 @@
 
 {% block body %}
 
-
-
 	<div class="container container-card">
 		<div class="row d-flex justify-content-start">
 			<h1 class="text-center">Nos recettes</h1>
@@ -15,7 +13,7 @@
 		<div class="container container-lg">
 			<div class="row justify-content-around">
 				{% for recipe in recipes %}
-					<div class="undetailed-dish-card card col-6 col-md-4 d-flex flex-column p-2 p-lg-4 m-1">
+					<div class="undetailed-dish-card card col-6 col-md-4 d-flex flex-column p-2 p-lg-4 m-3">
 
 						<img src="{{ asset('build/images/dishes/' ~ recipe.picture ~ '.jpg') }}" class="dish-card-image" alt="dish picture">
 						<div class="m-0 p-0 d-flex flex-column justify-content-between mb-3">
@@ -31,7 +29,7 @@
 							<p class="card-text">Cuisson :
 								{{ recipe.cookingTime }}
 								min.</p>
-							<a href="{{ path('recipe_show', {'id': recipe.id}) }}" class="position-absolute bottom-0 start-50 translate-middle-x btn btn-primary">Voir la recette</a>
+							<a href="{{ path('app_recipe_show', {'id': recipe.id}) }}" class="position-absolute bottom-0 start-50 translate-middle-x btn btn-primary">Voir la recette</a>
 
 						</div>
 						<div class="d-flex flex-column flex-sm-row align-items-baseline mt-1 p-0 justify-content-between"></div>
