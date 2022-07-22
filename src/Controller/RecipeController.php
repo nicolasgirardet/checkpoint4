@@ -10,16 +10,36 @@ use App\Entity\Recipe;
 use App\Repository\CuisineRepository;
 use App\Form\RecipeType;
 use Symfony\Component\HttpFoundation\Request;
+use App\Form\SearchRecipeFormType;
 
 class RecipeController extends AbstractController
 {
     #[Route('/recipe', name: 'app_recipe_index')]
-    public function index(RecipeRepository $recipeRepository): Response
+    public function index(Request $request, RecipeRepository $recipeRepository, CuisineRepository $cuisineRepository): Response
     {
+     
+        //$cuisineDisplay = $cuisineRepository->findAll();
+  /*
+        $form = $this->createForm(SearchRecipeFormType::class);
+
+    $form->handleRequest($request);
+
+    if ($form->isSubmitted() && $form->isValid()) {
+        $search = $form->getData()['cuisine'];
+        $recipes = $recipeRepository->findBy(['cuisine' => $search]);
+    } else {
         $recipes = $recipeRepository->findAll();
+
+    }
+*/
+   
+  $recipes = $recipeRepository->findAll();
 
         return $this->render('recipe/index.html.twig', [
             'recipes' => $recipes,
+            //'form' => $form,
+            //'search' => $search,
+            //'cuisine' => $cuisineDisplay
             //'website' => 'Asian Taste',
          ]);
     }

@@ -31,9 +31,11 @@ class UserFixtures extends Fixture
 
         );
 
+        $contributor->setPassword($hashedPassword);
+
         $manager->persist($contributor);
 
-        $this->addReference('user_1', $contributor);
+        //$this->addReference('user_1', $contributor);
 
 
 
