@@ -15,7 +15,44 @@
 			<div class="row justify-content-around">
 					<div class="detailed-dish-card card col-12 col-md-4 d-flex flex-column p-2 p-lg-4 m-1">
 
-						<img src="{{ asset('build/images/dishes/' ~ recipe.pictureOne ~ '.jpg') }}" class="center" alt="dish picture">
+
+					<!--CARROUSEL STARTS-->
+<div class="carrousel-body">
+					<!-- slider container -->
+    <div class="slider">
+
+      <!-- slide 1 -->
+      <div class="slide">
+        <img
+          src="{{ asset('build/images/dishes/' ~ recipe.pictureOne ~ '.jpg') }}"
+          alt="dish picture"
+        />
+      </div>
+
+       <!-- slide 2 -->
+      <div class="slide">
+        <img src="{{ asset('build/images/dishes/' ~ recipe.pictureTwo ~ '.jpg') }}" alt="dish picture" />
+      </div>
+
+       <!-- slide 3 -->
+      <div class="slide">
+        <img src="{{ asset('build/images/dishes/' ~ recipe.pictureThree ~ '.jpg') }}" alt="dish picture" />
+      </div>
+
+       <!-- slide 4 -->
+      <div class="slide">
+        <img src="{{ asset('build/images/dishes/' ~ recipe.pictureFour ~ '.jpg') }}" alt="dish picture" />
+      </div>
+
+       <!-- Control buttons -->
+      <button class="carrousel-btn btn-next">></button>
+      <button class="carrousel-btn btn-prev"><</button>
+    </div>
+	</div>
+
+					<!--CARROUSEL ENDS-->
+
+						
 						<div class="m-0 p-0 d-flex flex-column justify-content-between">
 						<p class="card-text">(Spécialité
 								{{ recipe.cuisine.name }})
@@ -45,4 +82,8 @@
 	</div>
 </div>
 
+{% endblock %}
+{% block javascripts %}
+    {{ encore_entry_script_tags('carrousel') }}
+	{{ encore_entry_script_tags('app') }}
 {% endblock %}
