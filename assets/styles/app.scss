@@ -3,6 +3,18 @@ $primary: #3916DB;
 
 @import "~bootstrap/scss/bootstrap";
 
+// FONTS 
+
+@font-face {
+    font-family: 'SharkMadeInJapan';
+    src: url('../fonts/sharkmadeinjapan.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'AsianHiro';
+    src: url('../fonts/aAsianHiro.ttf') format('truetype');
+}
+
 // GENERAL
 
 body {
@@ -29,10 +41,14 @@ body {
 
 .nav-container a {
     font-size: xx-large;
-    color: #DB290B; 
+    font-family: asianHiro, sans-serif; 
 }
 
 // CARDS SHOWING RECIPES WITHOUT DETAILS
+
+.card-title {
+    font-family: asianHiro, sans-serif; 
+}
 
 .dish-card-image {
     max-width: 372px;
