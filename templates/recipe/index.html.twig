@@ -21,7 +21,7 @@
 				{% for recipe in recipes %}
 					<div class="undetailed-dish-card card col-6 col-md-4 d-flex flex-column p-2 p-lg-4 m-3 dishes" id="{{ recipe.id }}">
 
-						<img src="{{ asset('build/images/dishes/' ~ recipe.picture ~ '.jpg') }}" class="dish-card-image" alt="dish picture">
+						<img src="{{ asset('build/images/dishes/' ~ recipe.pictureOne ~ '.jpg') }}" class="dish-card-image" alt="dish picture">
 						<div class="m-0 p-0 d-flex flex-column justify-content-between mb-3">
 							<h3 class="m-0 dishes">{{ recipe.name }}</h3>
 							<p class="card-text dishes">(Spécialité

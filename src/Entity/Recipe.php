@@ -33,7 +33,7 @@ class Recipe
     private ?string $step = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    private ?string $picture = null;
+    private ?string $pictureOne = null;
 
     #[ORM\ManyToOne(inversedBy: 'recipes')]
     #[ORM\JoinColumn(nullable: false)]
@@ -41,6 +41,15 @@ class Recipe
 
     #[ORM\ManyToOne(inversedBy: 'recipe')]
     private ?User $user = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $PictureTwo = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $PictureThree = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $PictureFour = null;
 
     public function getId(): ?int
     {
@@ -119,14 +128,14 @@ class Recipe
         return $this;
     }
 
-    public function getPicture(): ?string
+    public function getPictureOne(): ?string
     {
-        return $this->picture;
+        return $this->pictureOne;
     }
 
-    public function setPicture(?string $picture): self
+    public function setPictureOne(?string $pictureOne): self
     {
-        $this->picture = $picture;
+        $this->pictureOne = $pictureOne;
 
         return $this;
     }
@@ -151,6 +160,42 @@ class Recipe
     public function setUser(?User $user): self
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+    public function getPictureTwo(): ?string
+    {
+        return $this->PictureTwo;
+    }
+
+    public function setPictureTwo(?string $PictureTwo): self
+    {
+        $this->PictureTwo = $PictureTwo;
+
+        return $this;
+    }
+
+    public function getPictureThree(): ?string
+    {
+        return $this->PictureThree;
+    }
+
+    public function setPictureThree(?string $PictureThree): self
+    {
+        $this->PictureThree = $PictureThree;
+
+        return $this;
+    }
+
+    public function getPictureFour(): ?string
+    {
+        return $this->PictureFour;
+    }
+
+    public function setPictureFour(?string $PictureFour): self
+    {
+        $this->PictureFour = $PictureFour;
 
         return $this;
     }

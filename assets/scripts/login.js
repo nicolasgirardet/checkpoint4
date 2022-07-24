@@ -1,4 +1,4 @@
-var app = new Vue({
+let app = new Vue({
     el: '#form1',
     data: function () {
       return {
@@ -23,7 +23,7 @@ var app = new Vue({
   
   validEmail : function(email) {
      
-  var re = /(.+)@(.+){2,}\.(.+){2,}/;
+  let re = /(.+)@(.+){2,}\.(.+){2,}/;
   if(re.test(email.toLowerCase())){
     return true;
   }

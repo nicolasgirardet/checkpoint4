@@ -46,7 +46,49 @@ class RecipeFixtures extends Fixture implements DependentFixtureInterface
             '1 navet, de la sauce soja épaisse, 150 g de tofu, 1/2 chou chinois, 100 g de riz',
         ]));
         $recipe->setStep($faker->paragraphs(6, true));
-        $recipe->setPicture($faker->randomElement([
+        $recipe->setPictureOne($faker->randomElement([
+            'beef-noodle-soup',
+            'butajiru',
+            'butter-chicken',
+            'cock-a-leekie',
+            'duck-soup-noodles',
+            'fish',
+            'hara-masala-murgh',
+            'kimchi-guk',
+            'miso-soup',
+            'pork-blood-soup',
+            'solyanka',
+            'soto',
+        ]));
+        $recipe->setPictureTwo($faker->randomElement([
+            'beef-noodle-soup',
+            'butajiru',
+            'butter-chicken',
+            'cock-a-leekie',
+            'duck-soup-noodles',
+            'fish',
+            'hara-masala-murgh',
+            'kimchi-guk',
+            'miso-soup',
+            'pork-blood-soup',
+            'solyanka',
+            'soto',
+        ]));
+        $recipe->setPictureThree($faker->randomElement([
+            'beef-noodle-soup',
+            'butajiru',
+            'butter-chicken',
+            'cock-a-leekie',
+            'duck-soup-noodles',
+            'fish',
+            'hara-masala-murgh',
+            'kimchi-guk',
+            'miso-soup',
+            'pork-blood-soup',
+            'solyanka',
+            'soto',
+        ]));
+        $recipe->setPictureFour($faker->randomElement([
             'beef-noodle-soup',
             'butajiru',
             'butter-chicken',
