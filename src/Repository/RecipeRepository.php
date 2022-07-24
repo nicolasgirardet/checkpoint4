@@ -39,6 +39,19 @@ class RecipeRepository extends ServiceEntityRepository
         }
     }
 
+    public function findRecipeByKeyword(string $search): mixed
+    {
+        $queryBuilder = $this->createQueryBuilder('r')
+            ->join('r.cuisine', 'c')
+            ->where('r.name LIKE :name')
+            ->orWhere('c.name LIKE :name')
+            ->setParameter('name', '%' . $search . '%')
+            ->orderBy('r.name', 'ASC')
+            ->getQuery();
+
+        return $queryBuilder->getResult();
+    }
+
 //    /**
 //     * @return Recipe[] Returns an array of Recipe objects
 //     */

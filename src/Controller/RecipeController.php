@@ -18,33 +18,27 @@ class RecipeController extends AbstractController
     public function index(Request $request, RecipeRepository $recipeRepository, CuisineRepository $cuisineRepository): Response
     {
      
-        //$cuisineDisplay = $cuisineRepository->findAll();
-  /*
-        $form = $this->createForm(SearchRecipeFormType::class);
-
-    $form->handleRequest($request);
-
-    if ($form->isSubmitted() && $form->isValid()) {
-        $search = $form->getData()['cuisine'];
-        $recipes = $recipeRepository->findBy(['cuisine' => $search]);
-    } else {
-        $recipes = $recipeRepository->findAll();
-
-    }
-*/
-   
   $recipes = $recipeRepository->findAll();
 
         return $this->render('recipe/index.html.twig', [
             'recipes' => $recipes,
-            //'form' => $form,
-            //'search' => $search,
-            //'cuisine' => $cuisineDisplay
-            //'website' => 'Asian Taste',
          ]);
     }
 
-    #[Route('/recipe/new', name: 'app_recipe_new', methods: ['GET', 'POST'])]
+    #[Route('/recipe/{search}', name: 'app_recipe_search')]
+    public function search(RecipeRepository $recipeRepository, string $search): Response
+    {
+        $recipes = $recipeRepository->findRecipeByKeyword($search);
+        $idsArray = [];
+        foreach ($recipes as $recipe) {
+            $id = $recipe->getId();
+            $idsArray[] = $id;
+        }
+        $idsArrayJson = json_encode($idsArray);
+        return new Response($idsArrayJson);
+    }
+
+    #[Route('/recipe-details/new', name: 'app_recipe_new', methods: ['GET', 'POST'])]
     public function new(Request $request, RecipeRepository $recipeRepository): Response
     {
         $recipe = new Recipe();
@@ -63,7 +57,7 @@ class RecipeController extends AbstractController
         ]);
     }
 
-    #[Route('/recipe/{id}', name: 'app_recipe_show')]
+    #[Route('/recipe-details/{id}', name: 'app_recipe_show')]
     public function show(Recipe $recipe): Response
     {
         return $this->render('recipe/show.html.twig', [
@@ -71,7 +65,7 @@ class RecipeController extends AbstractController
         ]);
     }
 
-    #[Route('/recipe/{id}/edit', name: 'app_recipe_edit', methods: ['GET', 'POST'])]
+    #[Route('/recipe-details/{id}/edit', name: 'app_recipe_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Recipe $recipe, RecipeRepository $recipeRepository): Response
     {
         $form = $this->createForm(RecipeType::class, $recipe);
@@ -89,7 +83,7 @@ class RecipeController extends AbstractController
         ]);
     }
 
-    #[Route('/recipe/{id}', name: 'app_recipe_delete', methods: ['POST'])]
+    #[Route('/recipe-details/{id}', name: 'app_recipe_delete', methods: ['POST'])]
     public function delete(Request $request, Recipe $recipe, RecipeRepository $recipeRepository): Response
     {
         if ($this->isCsrfTokenValid('delete'.$recipe->getId(), $request->request->get('_token'))) {

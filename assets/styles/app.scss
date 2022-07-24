@@ -3,13 +3,13 @@ $primary: #3916DB;
 
 @import "~bootstrap/scss/bootstrap";
 
-body {
-    background-color: #DBC100;
-    margin-top: 200px;
-}
-
 // GENERAL
 
+body {
+    //background-color: #DBC100;
+    background-image: linear-gradient(to right, #DBC100 0%, #f8980d 100%);
+    margin-top: 200px;
+}
 
 // NAVBAR 
 
@@ -137,3 +137,5 @@ body {
     border-radius: 15px;
     min-width: 310px;
 }
+
+

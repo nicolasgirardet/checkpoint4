@@ -6,23 +6,25 @@
 {% block body %}
 
 
-
 	<div class="container container-card">
 		<div class="row d-flex justify-content-start">
 			<h1 class="text-center">Nos recettes</h1>
 		</div>
-
-		{#{{ include('components/_cuisineForm.html.twig') }}#}
-
+		<!--SEARCH TOOL STARTS-->
+		<div class="topnav d-flex justify-content-center mt-5 mb-5">
+		<label for="name" class="m-2">Recherche :</label>
+			<input id="keyword" type="search" name="name" placeholder="saisissez ici votre recherche...">
+		</div>
+		<!--SEARCH TOOL ENDS-->
 		<div class="container container-lg">
-			<div class="row justify-content-around">
+			<div class="row justify-content-around" id="dish-card-container">
 				{% for recipe in recipes %}
-					<div class="undetailed-dish-card card col-6 col-md-4 d-flex flex-column p-2 p-lg-4 m-3">
+					<div class="undetailed-dish-card card col-6 col-md-4 d-flex flex-column p-2 p-lg-4 m-3 dishes" id="{{ recipe.id }}">
 
 						<img src="{{ asset('build/images/dishes/' ~ recipe.picture ~ '.jpg') }}" class="dish-card-image" alt="dish picture">
 						<div class="m-0 p-0 d-flex flex-column justify-content-between mb-3">
-							<h3 class="m-0">{{ recipe.name }}</h3>
-							<p class="card-text">(Spécialité
+							<h3 class="m-0 dishes">{{ recipe.name }}</h3>
+							<p class="card-text dishes">(Spécialité
 								{{ recipe.cuisine.name }})
 							</p>
 							<p class="card-text">{{ recipe.nbPeople }}
@@ -43,3 +45,8 @@
 		</div>
 	</div>
 </div>{% endblock %}
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('search') }}
+	{{ encore_entry_script_tags('app') }}
+{% endblock %}
