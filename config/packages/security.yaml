@@ -34,7 +34,8 @@ security:
     access_control:
         # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
-        - { path: ^/new, roles: ROLE_USER }
+        - { path: ^/recipe/, roles: ROLE_CONTRIBUTOR }
+        - { path: ^/myaccount/, roles: ROLE_CONTRIBUTOR }
 
 when@test:
     security:
@@ -50,6 +51,6 @@ when@test:
                 memory_cost: 10 # Lowest possible value for argon
         # config/packages/security.yaml
         role_hierarchy:
-        ROLE_CONTRIBUTOR: ROLE_USER
+        ROLE_CONTRIBUTOR: ROLE_CONTRIBUTOR
         ROLE_ADMIN: ROLE_ADMIN
     

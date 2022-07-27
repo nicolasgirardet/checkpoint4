@@ -5,19 +5,18 @@ namespace App\DataFixtures;
 use App\Entity\Cuisine;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
-use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 
 class CuisineFixtures extends Fixture
 {
     const CUISINES = [
-        'japonaise',
-        'chinoise',
-        'vietnamienne',
-        'indienne',
-        'coréenne',
-        'thaïlandaise',
-        'indonésienne',
-        'taïwanaise',
+        'Japanese',
+        'Chinese',
+        'Vietnamese',
+        'Indian',
+        'Korean',
+        'Thailandese',
+        'Indonesian',
+        'Taiwanese',
     ];
 
     public function load(ObjectManager $manager): void

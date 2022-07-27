@@ -1,35 +1,32 @@
 {# _navbar.html.twig #}
 
-  <nav class="nav-container fixed-top navbar navbar-expand-md navbar-light bg-light">
-  <!-- Navbar content -->
-   <button class="navbar-button position-absolute top-50 start-5 translate-middle-y navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  <div class="container-fluid d-flex justify-content-center">
-  <img class="d-block d-md-none d  logo-picture"
-     src="{{ asset('build/images/logo_asian_taste.png') }}"
-     alt="logo">
-   
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-      <ul class="w-100 d-flex justify-content-around navbar-nav">
-      
-        <li class="align-self-center nav-item">
-          <a class="nav-link active" aria-current="page" href="{{ path('app_recipe_index') }}">Nos recettes</a>
-        </li>
-        <img class="d-none d-md-block d logo-picture"
-     src="{{ asset('build/images/logo_asian_taste.png') }}"
-     alt="logo">
-        <!--<a class="navbar-brand" href="#">ASIAN TASTE</a>-->
- <li class="align-self-center nav-item">
-  {% if app.user %}
-    {{ app.user.email }}
-    <a class="nav-link active" tabindex="-1" aria-disabled="true" href="{{ path('app_logout') }}">Se déconnecter</a>
-{% else %}
-    <a class="nav-link active" tabindex="-1" aria-disabled="true" href="{{ path('app_login') }}">Se connecter</a>
-{% endif %}
-    </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+<nav
+	class="nav-container fixed-top navbar navbar-expand-md navbar-light bg-light">
+	<!-- Navbar content -->
+	<button class="navbar-button position-absolute top-50 start-5 translate-middle-y navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="container-fluid d-flex justify-content-center">
+		<img class="d-block d-md-none d  logo-picture" src="{{ asset('build/images/logo_asian_taste.png') }}" alt="logo">
 
+		<div class="col-12 row collapse navbar-collapse" id="navbarTogglerDemo01">
+			<ul class="d-flex justify-content-around navbar-nav">
+				<li class="col-4 align-self-center nav-item">
+					<a class="nav-link d-flex justify-content-center active" aria-current="page" href="{{ path('app_recipe_index') }}">Recipes</a>
+				</li>
+				<img class="col-4 d-none d-md-block d logo-picture" src="{{ asset('build/images/logo_asian_taste.png') }}" alt="logo">
+				<li class="col-4 align-self-center nav-item">
+					<div class="d-flex flex-row justify-content-around">
+						{% if app.user %}
+							<a class="nav-link active" tabindex="-1" aria-disabled="true" href="{{ path('app_myaccount_menu') }}">My account</a>
+							<a class="nav-link active" tabindex="-1" aria-disabled="true" href="{{ path('app_logout') }}">Log out</a>
+						</div>
+
+					{% else %}
+						<a class="nav-link active" tabindex="-1" aria-disabled="true" href="{{ path('app_login') }}">Log in</a>
+					{% endif %}
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>

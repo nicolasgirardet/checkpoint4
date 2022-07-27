@@ -8,41 +8,45 @@
 		<div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
 	{% endif %}
 
-	<form class="login-form d-flex justify-content-center" action="{{ path('app_login') }}" method="post">
-		
-			<div class="col-md-6">
-				<div class="login-card py-5" id="form1">
-					<div class="form-data" v-if="!submitted">
-						<div class="login-forms-inputs mb-4">
-							<label for="username">Email:</label>
-							<input autocomplete="off" type="text" id="username" name="_username" value="{{ last_username }}" v-model="email" v-bind:class="{'form-control':true, 'is-invalid' : !validEmail(email) && emailBlured}" v-on:blur="emailBlured = true">
-							<div class="invalid-feedback">A valid email is required!</div>
-						</div>
-						<div class="login-forms-inputs mb-4">
-							<label for="password">Password:</label><input type="password" id="password" name="_password" autocomplete="off" type="password" v-model="password" v-bind:class="{'form-control':true, 'is-invalid' : !validPassword(password) && passwordBlured}" v-on:blur="passwordBlured = true">
-							<div class="invalid-feedback">Password must be 8 character!</div>
-						</div>
-						<div class="d-flex justify-content-center mb-3">
-							<button type="submit" v-on:click.stop.prevent="submit" class="btn btn-primary
-                            login-btn w-100">Login</button>
-						</div>
-                        <div>
-                        <p>Vous n'avez pas de compte ? <a href="{{ path('app_register') }}">En créer un</a></p>
-                        </div>
-					</div>
-					<div class="success-data" v-else>
-						<div class="text-center d-flex flex-column">
-							<i class='bx bxs-badge-check'></i>
-							<!--<span class="text-center fs-1">You have been logged in
-								<br>
-								Successfully</span>-->
-						</div>
+	<h1 class="text-center registration-title">Log in</h1>
 
-						{# If you want to control the URL the user is redirected to on success
-						        <input type="hidden" name="_target_path" value="/account"/> #}
+	<form class="login-form col-6 row d-flex justify-content-center" action="{{ path('app_login') }}" method="post">
+
+		<div class="col-md-12">
+			<div class="login-card py-1" id="form1">
+				<div class="form-data" v-if="!submitted">
+					<div class="login-forms-inputs mb-4">
+						<label for="username">Email:</label>
+						<input autocomplete="off" type="text" id="username" name="_username" value="{{ last_username }}" v-model="email" v-bind:class="{'form-control':true, 'is-invalid' : !validEmail(email) && emailBlured}" v-on:blur="emailBlured = true">
+						<div class="invalid-feedback">A valid email is required!</div>
+					</div>
+					<div class="login-forms-inputs mb-4">
+						<label for="password">Password:</label><input type="password" id="password" name="_password" autocomplete="off" type="password" v-model="password" v-bind:class="{'form-control':true, 'is-invalid' : !validPassword(password) && passwordBlured}" v-on:blur="passwordBlured = true">
+						<div class="invalid-feedback">Password must be 8 character!</div>
+					</div>
+					<div class="d-flex justify-content-center mb-3">
+						<button type="submit" v-on:click.stop.prevent="submit" class="btn btn-primary
+							                            login-btn w-100">Log in</button>
+					</div>
+					<div>
+						<p>You don't have an account yet?
+							<a href="{{ path('app_register') }}">Register</a>
+						</p>
 					</div>
 				</div>
+				<div class="success-data" v-else>
+					<div class="text-center d-flex flex-column">
+						<i class='bx bxs-badge-check'></i>
+						<!--<span class="text-center fs-1">You have been logged in
+														<br>
+														Successfully</span>-->
+					</div>
+
+					{# If you want to control the URL the user is redirected to on success
+											        <input type="hidden" name="_target_path" value="/account"/> #}
+				</div>
 			</div>
-		
+		</div>
+
 	</form>
 {% endblock %}

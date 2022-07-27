@@ -14,7 +14,7 @@ use App\Form\SearchRecipeFormType;
 
 class RecipeController extends AbstractController
 {
-    #[Route('/recipe', name: 'app_recipe_index')]
+    #[Route('/recipes', name: 'app_recipe_index')]
     public function index(Request $request, RecipeRepository $recipeRepository, CuisineRepository $cuisineRepository): Response
     {
      
@@ -25,7 +25,7 @@ class RecipeController extends AbstractController
          ]);
     }
 
-    #[Route('/recipe/{search}', name: 'app_recipe_search')]
+    #[Route('/recipes/{search}', name: 'app_recipe_search')]
     public function search(RecipeRepository $recipeRepository, string $search): Response
     {
         $recipes = $recipeRepository->findRecipeByKeyword($search);
@@ -38,7 +38,7 @@ class RecipeController extends AbstractController
         return new Response($idsArrayJson);
     }
 
-    #[Route('/recipe-details/new', name: 'app_recipe_new', methods: ['GET', 'POST'])]
+    #[Route('/recipe/new', name: 'app_recipe_new', methods: ['GET', 'POST'])]
     public function new(Request $request, RecipeRepository $recipeRepository): Response
     {
         $recipe = new Recipe();
@@ -65,7 +65,7 @@ class RecipeController extends AbstractController
         ]);
     }
 
-    #[Route('/recipe-details/{id}/edit', name: 'app_recipe_edit', methods: ['GET', 'POST'])]
+    #[Route('/recipe/{id}/edit', name: 'app_recipe_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Recipe $recipe, RecipeRepository $recipeRepository): Response
     {
         $form = $this->createForm(RecipeType::class, $recipe);
@@ -83,7 +83,7 @@ class RecipeController extends AbstractController
         ]);
     }
 
-    #[Route('/recipe-details/{id}', name: 'app_recipe_delete', methods: ['POST'])]
+    #[Route('/recipe/{id}', name: 'app_recipe_delete', methods: ['POST'])]
     public function delete(Request $request, Recipe $recipe, RecipeRepository $recipeRepository): Response
     {
         if ($this->isCsrfTokenValid('delete'.$recipe->getId(), $request->request->get('_token'))) {

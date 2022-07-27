@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Our recipes
+{% endblock %}
+
+{% block body %}
+
+
+	<div class="container container-card">
+		<div class="row d-flex justify-content-start">
+			<h1 class="text-center card-title">Our recipes</h1>
+		</div>
+		<div class="container container-lg">
+			<div class="row justify-content-around" id="dish-card-container">
+				{% for recipe in recipes %}
+					<div class="undetailed-dish-card card col-6 col-md-4 d-flex flex-column p-2 p-lg-2 m-3" id="{{ recipe.id }}">
+
+						<img src="{{ asset('build/images/dishes/' ~ recipe.pictureOne ~ '.jpg') }}" class="dish-card-image" alt="dish picture">
+						<div class="m-0 p-0 d-flex flex-column justify-content-between mb-3">
+							<h3 class="m-0 dishes">{{ recipe.name }}</h3>
+							<p class="card-text dishes">({{ recipe.cuisine.name }} cuisine)
+							</p>
+							<p class="card-text">Servings: {{ recipe.nbPeople }}</p>
+							<p class="card-text">Prep. time :
+								{{ recipe.prepTime }}
+								min.</p>
+							<p class="card-text">Cooking time :
+								{{ recipe.cookingTime }}
+								min.</p>
+							<a href="{{ path('app_recipe_show', {'id': recipe.id}) }}" class="position-absolute bottom-0 start-50 translate-middle-x btn btn-primary">View recipe</a>
+
+						</div>
+						<div class="d-flex flex-column flex-sm-row align-items-baseline mt-1 p-0 justify-content-between"></div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>{% endblock %}

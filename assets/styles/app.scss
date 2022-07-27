@@ -1,5 +1,6 @@
 // redefining Bootstrap's colours
 $primary: #3916DB;
+$secondary: #BEBF77;
 
 @import "~bootstrap/scss/bootstrap";
 
@@ -18,9 +19,24 @@ $primary: #3916DB;
 // GENERAL
 
 body {
-    //background-color: #DBC100;
-    background-image: linear-gradient(to right, #DBC100 0%, #f8980d 100%);
-    margin-top: 200px;
+    margin-top: 173px;
+    margin-bottom: 62px;
+    width: 100%;
+    background: linear-gradient(to right, #DBC100 0%, #f8980d 100%), url('../images/website/dumplings.jpg');
+}
+
+.after-body {
+    background-image: url('../images/website/dumplings.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 66.66% 100%;
+    background-origin: border-box;
+}
+
+h1 {
+    padding-top: 20px;
+    color: black;
 }
 
 // NAVBAR 
@@ -44,6 +60,14 @@ body {
     font-family: asianHiro, sans-serif; 
 }
 
+// FOOTER
+
+.footer {
+    background-color: #ffffff;
+    color: #000000;
+    border-top: black solid 2px;
+}
+
 // CARDS SHOWING RECIPES WITHOUT DETAILS
 
 .card-title {
@@ -59,14 +83,15 @@ body {
     width: 280px;
     height: 520px;
     margin-bottom: 15px;
-    border: #DB290B solid 1px;
+    border: #DB290B solid 2px;
 }
 
 // CARDS SHOWING RECIPES WITH DETAILS
 
 .detailed-dish-card {
     width: 100%;
-    border: #DB290B solid 1px;
+    border: #DB290B solid 2px;
+    min-width: 372px;
 }
 
 // CARROUSEL 
@@ -97,6 +122,7 @@ body {
   .slide img {
     width: 100%;
     height: 100%;
+    min-width: 372px;
     object-fit: cover;
   }
   
@@ -133,7 +159,7 @@ body {
 .recipe-form {
     margin: 222px 25% 12.5% 25% ;
     border: black solid 2px;
-    background-color: #16DB84;
+    background-color: $secondary;
     padding: 3%;
     border-radius: 15px;
     min-width: 310px;
@@ -142,17 +168,23 @@ body {
 // LOGIN FORM
 
 .login-form {
-    margin: 222px 25% 12.5% 25% ;
+    /*margin: 222px 25% 12.5% 25% ;
     border: black solid 2px;
     background-color: #16DB84;
     padding: 3%;
     border-radius: 15px;
-    min-width: 310px;
+    min-width: 310px;*/
+
+    margin: 95px 25% 12.5% 25% ;
+    border: black solid 2px;
+    background-color: $secondary;
+    padding: 3%;
+    border-radius: 15px;
+    min-width: 320px;
 }
 
 .login-card {
-    height: 320px;
-    background-color: #16DB84;
+    background-color: $secondary;
 }
 
 .login-form input {
@@ -205,12 +237,30 @@ body {
 }
 
 .registration-form {
-    margin: 130px 25% 12.5% 25% ;
+    margin: 95px 25% 12.5% 25% ;
     border: black solid 2px;
-    background-color: #16DB84;
+    background-color: $secondary;
     padding: 3%;
     border-radius: 15px;
-    min-width: 310px;
+    min-width: 320px;
 }
+
+.registration-title {
+        font-family: asianHiro, sans-serif; 
+}
+
+// MY ACCOUNT MENU
+
+.menu-button {
+    border: 2px black solid;
+    border-radius: 15px;
+}
+
+.menu-container {
+    background-color: $secondary;
+    border: 2px black solid;
+    border-radius: 15px;
+}
+
 
 

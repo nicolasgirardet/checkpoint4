@@ -54,25 +54,23 @@
 
 						
 						<div class="m-0 p-0 d-flex flex-column justify-content-between">
-						<p class="card-text">(Spécialité
-								{{ recipe.cuisine.name }})
+						<p class="card-text">({{ recipe.cuisine.name }} cuisine)
 								</p>
-							<p class="card-text">Pour {{ recipe.nbPeople }}
-								personnes</p>
-							<p class="card-text"><b>Préparation :</b>
+							<p class="card-text"><b>Servings:</b> {{ recipe.nbPeople }}</p>
+							<p class="card-text"><b>Preparation time:</b>
 								{{ recipe.prepTime }}
 								minutes</p>
-							<p class="card-text"><b>Cuisson :</b>
+							<p class="card-text"><b>Cooking time:</b>
 								{{ recipe.cookingTime }} minutes
 								</p>
-                                <p class="card-text"><b>Ingrédients :</b>
+                                <p class="card-text"><b>Ingredients:</b>
 								{{ recipe.ingredient }}.
 								</p>
-                                <p class="card-text"><b>Étapes :</b>
+                                <p class="card-text"><b>Directions:</b>
 								{{ recipe.step }}
 								</p>
 							
-							<a href="{{ path('app_recipe_index') }}" class="position-absolute bottom-0 start-50 translate-middle-x btn btn-primary">Retour</a>
+							<a href="{{ path('app_recipe_index') }}" class="position-absolute bottom-0 start-50 translate-middle-x btn btn-primary mb-2">Back</a>
 							
 						</div>
 						<div class="d-flex flex-column flex-sm-row align-items-baseline mt-1 p-0 justify-content-between"></div>

@@ -3,8 +3,6 @@
 namespace App\Form;
 
 use App\Entity\User;
-use Doctrine\DBAL\Types\TextType;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
@@ -21,13 +19,13 @@ class RegistrationFormType extends AbstractType
     {
         $builder
             ->add('email', EmailType::class, [
-                'label' => 'Adresse e-mail',
+                'label' => 'E-mail',
             ])
             ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,
                 'constraints' => [
                     new IsTrue([
-                        'message' => 'Vous devez accepter nos conditions générales pour créer un compte.',
+                        'message' => 'You must agree with our terms to register.',
                     ]),
                 ],
             ])
@@ -38,11 +36,11 @@ class RegistrationFormType extends AbstractType
                 'attr' => ['autocomplete' => 'new-password'],
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Veuillez saisir un mot de passe',
+                        'message' => 'Please type a password',
                     ]),
                     new Length([
                         'min' => 6,
-                        'minMessage' => 'Votre mot de passe doit contenir au minimum {{ limit }} caractères',
+                        'minMessage' => 'Your password must contain at least {{ limit }} characters',
                         // max length allowed by Symfony for security reasons
                         'max' => 4096,
                     ]),

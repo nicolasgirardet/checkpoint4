@@ -18,29 +18,44 @@ class RecipeType extends AbstractType
     {
         $builder
             ->add('name', TextType::class, [
-                'label' => 'Nom du plat'
+                'label' => 'Name of your dish'
             ])
             ->add('nbPeople', NumberType::class, 
             [
-                'label' => 'Pour combien de personnes ?',
+                'label' => 'Servings',
                 'required' => false,
             ])
             ->add('prepTime', NumberType::class, [
-                'label' => 'Temps de préparation (en minutes)',
+                'label' => 'Preparation time (in minutes)',
                 'required' => false,
             ])
             ->add('cookingTime', NumberType::class, [
-                'label' => 'Temps de cuisson (en minutes)',
+                'label' => 'Cooking time (in minutes)',
                 'required' => false,
             ])
             ->add('ingredient', TextAreaType::class, [
-                'label' => 'Liste des ingrédients',
+                'label' => 'List of ingredients',
             ])
             ->add('step', TextAreaType::class, [
-                'label' => 'Étapes de fabrication'
+                'label' => 'Directions'
             ])
-            ->add('picture', TextType::class, [
-                'label' => 'Ajouter une image',
+            ->add('pictureOne', TextType::class, [
+                'label' => 'Add a picture',
+                'required' => false,
+
+            ])
+            ->add('pictureTwo', TextType::class, [
+                'label' => 'Add a picture',
+                'required' => false,
+
+            ])
+            ->add('pictureThree', TextType::class, [
+                'label' => 'Add a picture',
+                'required' => false,
+
+            ])
+            ->add('pictureFour', TextType::class, [
+                'label' => 'Add a picture',
                 'required' => false,
 
             ])
